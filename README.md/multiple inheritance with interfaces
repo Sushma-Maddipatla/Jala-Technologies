@@ -1,0 +1,36 @@
+In java multiple inheritance with classes is not possible. So, it can be done with the help of one class and two or more interfaces. This can be implemented as shown below.
+
+class Color{
+	public void red(){
+	
+		System.out.println("java");
+	}
+}
+
+interface IFlyable
+{
+     void fly();
+}
+interface IEatable
+{
+    void eat();
+}
+class Bird extends Color implements IFlyable,IEatable
+{
+    public void fly(){
+    	System.out.println("flying");
+    }
+    public void eat()
+    {
+    	System.out.println("eating");
+    }
+}
+public class Main {
+	public static void main(String[] args) {
+
+        Bird b = new Bird();
+        b.eat();
+        b.fly();
+        b.red();
+	}
+}
