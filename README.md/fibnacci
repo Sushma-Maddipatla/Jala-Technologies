@@ -1,0 +1,53 @@
+import java.util.*;
+import java.lang.*;
+ 
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in = new Scanner(System.in);
+        System.out.println("Enter 1 Prime Fibonacci Numbers");
+        System.out.println("Enter 2 Prime factors");
+        System.out.print("Enter your choice: ");
+        int choice = in.nextInt();
+
+        switch (choice) {
+            case 1:
+            int a = 0, b = 1;
+            int term = a + b;
+            while (term <= 1000) {
+                int c = 0;
+                for (int i = 1; i <= term; i++) {
+                    if (term % i == 0) {
+                        c++;
+                    }
+                }
+                if (c == 2)
+                    System.out.print(term + " ");
+                    
+                a = b;
+                b = term;
+                term = a + b;
+            }
+            break;
+
+            case 2:
+            System.out.print("Enter Number: ");
+            int num = in.nextInt();
+            System.out.print("The prime factors of " + num + " are: ");
+            for(int i = 2; i < num; i++) {
+                while (num % i == 0) {
+                    System.out.print(i + " ");
+                    num = num / i;
+                }
+            }
+            if(num > 2) {
+                System.out.println(num);
+            }
+            break;
+
+            default:
+            System.out.println("Incorrect Choice!!!");
+        }
+    }
+}
+        
